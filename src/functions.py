@@ -42,7 +42,7 @@ def convert_file(file_name, dir_name):
             else:
                 close_ind = 0
                 continue
-        # Append text
+        # Append text - line breaks need to be preserved, so no stripping
         else:
             wf.writelines(i)
 
@@ -50,6 +50,7 @@ def convert_file(file_name, dir_name):
 # Combine all operations on each file
 def convert_all():
     for i in os.scandir():
+        # Only search for main recipe text files
         if i.name.endswith('.txt'):
             dname = i.name.replace('.txt', '')
             reset_dir(dname)
@@ -58,8 +59,23 @@ def convert_all():
 
 # Check for dupes
 def dupe_check():
+    dlist = []
+    # First get list of subdirectories to search through
     for i in os.listdir():
         if os.path.isdir(i) and i != '__pycache__':
-            print(i)
+            dlist.append(i)
+    print(dlist)
+    # Loop through each subdirectory listed and check for any dupes
+    for i in dlist:
+        for j in os.scandir(i):
+            for k in dlist:
+                # Don't run if in the same subdirectory
+                if i == k:
+                    continue
+                else:
+                    for l in os.scandir(k):
+                        if j.name == l.name:
+                            print('FILE: %s; RECIPE: %s' % (i, j.name))
+                            print('FILE: %s; RECIPE: %s' % (k, l.name))
     
     
