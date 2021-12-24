@@ -2,6 +2,6 @@
 from functions import *
 
 
-#convert_all()
+convert_all()
 dupe_check()
 

@@ -1,5 +1,26 @@
 
-import os
+import os, time
+
+
+# Start timer for functinos
+def start_function(func_name):
+    start_time = time.time()
+    print('\n' + ('#' * 80))
+    print('Function: %s\nStarting...' % (func_name))
+    return start_time
+
+
+# End timer for functions
+def end_function(start_time):
+    end_time = time.time() - start_time
+    if end_time > 60:
+        res = end_time / 60
+        res_spl = str(res).split('.')
+        mins = res_spl[0]
+        secs = round(float('.' + res_spl[1]) * 60, 3)
+        print('''Function finished in %s' %s"''' % (mins, secs))
+    else:
+        print('Function finished in %s"' % round(time.time() - start_time, 3))
 
 
 # Remove/create directories
@@ -49,16 +70,19 @@ def convert_file(file_name, dir_name):
 
 # Combine all operations on each file
 def convert_all():
+    start_time = start_function('convert_all')
     for i in os.scandir():
         # Only search for main recipe text files
         if i.name.endswith('.txt'):
             dname = i.name.replace('.txt', '')
             reset_dir(dname)
             convert_file(i.name, dname)
+    end_function(start_time)
 
 
 # Check for dupes
 def dupe_check():
+    start_time = start_function('dupe_check')
     dlist = []
     # First get list of subdirectories to search through
     for i in os.listdir():
@@ -78,5 +102,6 @@ def dupe_check():
                             print('DIRECTORY 1: %s; FILE 1: %s' % (i, j.name))
                             print('DIRECTORY 2: %s; FILE 2: %s' % (k, l.name))
                             print()
+    end_function(start_time)
 
     
