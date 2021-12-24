@@ -1,2 +1,4 @@
 COLESLAW DRESSING
-Mix:    2:2:1 ratio of mayonnaise:sour cream:sugar    Salt and pepper
+Mix:
+    2:2:1 ratio of mayonnaise:sour cream:sugar
+    Salt and pepper

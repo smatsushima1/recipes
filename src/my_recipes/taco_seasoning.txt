@@ -1,2 +1,13 @@
 TACO SEASONING
-Mix:    4 T paprika    2 T chili powder    2 T dried oregano    1 T cumin    1 T garlic powder    1 T onion powder    1 T cornstarch    1 T salt    1 t sugar    1 t coriander    1 t black pepper
+Mix:
+    4 T paprika
+    2 T chili powder
+    2 T dried oregano
+    1 T cumin
+    1 T garlic powder
+    1 T onion powder
+    1 T cornstarch
+    1 T salt
+    1 t sugar
+    1 t coriander
+    1 t black pepper

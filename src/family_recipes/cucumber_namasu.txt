@@ -1,2 +1,10 @@
 CUCUMBER NAMASU
-Grate:    2 medium cucumbers    1 small carrotSqueeze all liquid then combine with:    1/2 c sugar    1/4 c vinegar    1 t ginger, minced    1 can clams, minced and drained    Salt
+Grate:
+    2 medium cucumbers
+    1 small carrot
+Squeeze all liquid then combine with:
+    1/2 c sugar
+    1/4 c vinegar
+    1 t ginger, minced
+    1 can clams, minced and drained
+    Salt

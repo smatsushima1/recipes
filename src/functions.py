@@ -44,7 +44,7 @@ def convert_file(file_name, dir_name):
                 continue
         # Append text
         else:
-            wf.writelines(i.rstrip())
+            wf.writelines(i)
 
 
 # Combine all operations on each file
