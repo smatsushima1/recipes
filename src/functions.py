@@ -93,7 +93,7 @@ def dupe_check():
         for j in os.scandir(i):
             for x2, k in enumerate(dlist):
                 # Don't run if in the same subdirectory, or if already ran previously
-                if x1 == x2 or x1 > x2:
+                if x1 >= x2:
                     continue
                 else:
                     for l in os.scandir(k):
