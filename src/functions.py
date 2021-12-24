@@ -65,17 +65,18 @@ def dupe_check():
         if os.path.isdir(i) and i != '__pycache__':
             dlist.append(i)
     # Loop through each subdirectory listed and check for any dupes
-    for i in dlist:
+    for x1, i in enumerate(dlist):
         for j in os.scandir(i):
-            for k in dlist:
-                # Don't run if in the same subdirectory
-                if i == k:
+            for x2, k in enumerate(dlist):
+                # Don't run if in the same subdirectory, or if already ran previously
+                if x1 == x2 or x1 > x2:
                     continue
                 else:
                     for l in os.scandir(k):
-                        # Shows errors twice - needs to be revised later
+                        # Show where dupes are
                         if j.name == l.name:
-                            print('FILE: %s; RECIPE: %s' % (i, j.name))
-                            print('FILE: %s; RECIPE: %s' % (k, l.name))
-    
+                            print('DIRECTORY 1: %s; FILE 1: %s' % (i, j.name))
+                            print('DIRECTORY 2: %s; FILE 2: %s' % (k, l.name))
+                            print()
+
     
